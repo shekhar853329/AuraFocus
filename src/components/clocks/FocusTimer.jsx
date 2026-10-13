@@ -62,29 +62,30 @@ export function FocusTimer() {
   return (
     <div className="flex flex-col items-center select-none text-center px-4 animate-fade-in max-w-lg">
       {/* Segmented Timer Presets */}
-      <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0d0f16]/80 backdrop-blur-2xl border border-white/10 mb-6">
+      <div className="flex items-center gap-1 sm:gap-1.5 p-1 rounded-full bg-[#0d0f16]/80 backdrop-blur-2xl border border-white/10 mb-4 sm:mb-6">
         {[
-          { label: '25m Focus', mode: '25m', mins: 25 },
-          { label: '50m Deep', mode: '50m', mins: 50 },
-          { label: '5m Break', mode: '5m', mins: 5 },
-          { label: '15m Rest', mode: '15m', mins: 15 }
+          { full: '25m Focus', short: '25m', mode: '25m', mins: 25 },
+          { full: '50m Deep', short: '50m', mode: '50m', mins: 50 },
+          { full: '5m Break', short: '5m', mode: '5m', mins: 5 },
+          { full: '15m Rest', short: '15m', mode: '15m', mins: 15 }
         ].map((item) => (
           <button
             key={item.mode}
             onClick={() => setTimerMode(item.mode, item.mins)}
-            className={`px-3 py-1.5 rounded-full font-mono text-xs tracking-wider transition-all ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full font-mono text-[11px] sm:text-xs tracking-wider transition-all ${
               currentMode === item.mode
                 ? 'bg-[#38e1ff] text-[#00232a] font-semibold shadow-[0_0_15px_rgba(56,225,255,0.4)]'
                 : 'text-[#8b95a5] hover:text-[#f1f2f6]'
             }`}
           >
-            {item.label}
+            <span className="hidden sm:inline">{item.full}</span>
+            <span className="sm:hidden">{item.short}</span>
           </button>
         ))}
       </div>
 
       {/* Hero Countdown Digits */}
-      <div className="flex items-baseline justify-center gap-2">
+      <div className="flex items-baseline justify-center gap-1 sm:gap-2">
         <span
           className="clock-hero-digits"
           style={{ textShadow: '0 4px 40px rgba(0, 0, 0, 0.9)' }}
@@ -106,7 +107,7 @@ export function FocusTimer() {
       </div>
 
       {/* Linear Glow Progress Bar */}
-      <div className="w-64 sm:w-80 h-1.5 bg-white/10 rounded-full mt-6 overflow-hidden relative">
+      <div className="w-52 sm:w-80 h-1.5 bg-white/10 rounded-full mt-4 sm:mt-6 overflow-hidden relative">
         <div
           className="h-full bg-gradient-to-r from-[#38e1ff] to-[#a78bfa] rounded-full transition-all duration-300 shadow-[0_0_12px_rgba(56,225,255,0.7)]"
           style={{ width: `${progressPercent}%` }}

@@ -12,21 +12,21 @@ export function Header({
 }) {
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 pointer-events-none p-3 sm:p-5 md:p-8 hud-transition ${
+      className={`fixed top-0 left-0 right-0 z-50 pointer-events-none p-2 sm:p-5 md:p-8 hud-transition ${
         isIdle ? 'hud-top-hidden' : 'opacity-100'
       }`}
     >
-      <div className="h-14 max-w-7xl mx-auto px-4 sm:px-6 rounded-full bg-[#12141a]/70 backdrop-blur-2xl border border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.5)] flex items-center justify-between pointer-events-auto">
+      <div className="h-12 sm:h-14 max-w-7xl mx-auto px-3 sm:px-6 rounded-full bg-[#12141a]/70 backdrop-blur-2xl border border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.5)] flex items-center justify-between pointer-events-auto">
         {/* Brand */}
         <div
-          className="flex items-center gap-2.5 cursor-pointer select-none group"
+          className="flex items-center gap-2 sm:gap-2.5 cursor-pointer select-none group"
           onClick={() => setDisplayMode('blend')}
           title="AuraFocus Living Canvas"
         >
-          <div className="w-8 h-8 rounded-full bg-[#1b1f2b] flex items-center justify-center text-[#38e1ff] shadow-inner border border-white/10 group-hover:scale-105 transition-transform">
-            <span className="material-symbols-outlined text-[18px]">blur_on</span>
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#1b1f2b] flex items-center justify-center text-[#38e1ff] shadow-inner border border-white/10 group-hover:scale-105 transition-transform">
+            <span className="material-symbols-outlined text-[16px] sm:text-[18px]">blur_on</span>
           </div>
-          <span className="font-display font-medium text-lg sm:text-xl tracking-tight text-[#f1f2f6]">
+          <span className="font-display font-medium text-base sm:text-xl tracking-tight text-[#f1f2f6]">
             AuraFocus
           </span>
         </div>
@@ -57,13 +57,13 @@ export function Header({
         </nav>
 
         {/* Right Action Icons */}
-        <div className="flex items-center gap-2">
-          {/* Keyboard Shortcuts helper */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Keyboard Shortcuts helper (Desktop only) */}
           <button
             onClick={openShortcuts}
             aria-label="Keyboard Shortcuts"
             title="Keyboard Shortcuts (Press ?)"
-            className="w-9 h-9 rounded-full bg-[#1b1f2b]/70 hover:bg-[#252b3b] text-[#b0b8c2] hover:text-[#f1f2f6] border border-white/10 flex items-center justify-center transition-all"
+            className="hidden sm:flex w-9 h-9 rounded-full bg-[#1b1f2b]/70 hover:bg-[#252b3b] text-[#b0b8c2] hover:text-[#f1f2f6] border border-white/10 items-center justify-center transition-all"
           >
             <span className="material-symbols-outlined text-[17px]">keyboard</span>
           </button>
@@ -73,9 +73,9 @@ export function Header({
             onClick={toggleFullscreen}
             aria-label="Toggle Fullscreen"
             title="Toggle Zen Fullscreen (F)"
-            className="w-9 h-9 rounded-full bg-[#1b1f2b]/70 hover:bg-[#252b3b] text-[#b0b8c2] hover:text-[#f1f2f6] border border-white/10 flex items-center justify-center transition-all"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1b1f2b]/70 hover:bg-[#252b3b] text-[#b0b8c2] hover:text-[#f1f2f6] border border-white/10 flex items-center justify-center transition-all"
           >
-            <span className="material-symbols-outlined text-[18px]">
+            <span className="material-symbols-outlined text-[16px] sm:text-[18px]">
               {isFullscreen ? 'fullscreen_exit' : 'fullscreen'}
             </span>
           </button>
@@ -85,18 +85,18 @@ export function Header({
             onClick={openSettings}
             aria-label="Settings"
             title="Customization Settings"
-            className="w-9 h-9 rounded-full bg-[#1b1f2b]/70 hover:bg-[#252b3b] text-[#b0b8c2] hover:text-[#f1f2f6] border border-white/10 flex items-center justify-center transition-all"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1b1f2b]/70 hover:bg-[#252b3b] text-[#b0b8c2] hover:text-[#f1f2f6] border border-white/10 flex items-center justify-center transition-all"
           >
-            <span className="material-symbols-outlined text-[18px]">tune</span>
+            <span className="material-symbols-outlined text-[16px] sm:text-[18px]">tune</span>
           </button>
 
           {/* Zen status avatar badge */}
           <div
             onClick={openPresets}
-            className="cursor-pointer w-8 h-8 rounded-full bg-[#38e1ff] flex items-center justify-center ml-1 shadow-[0_0_12px_rgba(56,225,255,0.4)]"
+            className="cursor-pointer w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#38e1ff] flex items-center justify-center ml-0.5 sm:ml-1 shadow-[0_0_12px_rgba(56,225,255,0.4)]"
             title="Atmospheric Presets"
           >
-            <span className="material-symbols-outlined text-[#00232a] text-[18px] font-bold">
+            <span className="material-symbols-outlined text-[#00232a] text-[16px] sm:text-[18px] font-bold">
               auto_awesome
             </span>
           </div>

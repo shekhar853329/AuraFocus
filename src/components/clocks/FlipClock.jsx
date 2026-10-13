@@ -14,7 +14,7 @@ export function FlipClock({ time, settings }) {
         {digits.split('').map((d, idx) => (
           <div
             key={idx}
-            className="relative w-14 h-20 sm:w-20 sm:h-32 md:w-24 md:h-36 lg:w-28 lg:h-40 rounded-xl bg-[#0d0f16]/90 backdrop-blur-2xl shadow-[0_12px_36px_rgba(0,0,0,0.7)] flex items-center justify-center overflow-hidden border border-white/10"
+            className="flip-card-unit backdrop-blur-2xl"
           >
             <span
               className="flip-digit-val select-none"
@@ -28,26 +28,26 @@ export function FlipClock({ time, settings }) {
           </div>
         ))}
       </div>
-      <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-[#8b95a5] mt-2 sm:mt-3 font-medium">
+      <span className="font-mono text-[9px] sm:text-xs uppercase tracking-widest text-[#8b95a5] mt-1.5 sm:mt-3 font-medium">
         {label}
       </span>
     </div>
   );
 
   return (
-    <div className="flex flex-col items-center gap-6 select-none animate-fade-in">
-      <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
+    <div className="flex flex-col items-center gap-4 sm:gap-6 select-none animate-fade-in px-2">
+      <div className="flex items-center gap-1 sm:gap-4 md:gap-6 max-w-full justify-center">
         {/* Hours */}
         {renderFlapPair(hours, 'Hours', '#38e1ff')}
 
-        <span className="font-display text-2xl sm:text-4xl text-white/30 -mt-6 font-light">:</span>
+        <span className="font-display text-lg sm:text-4xl text-white/30 -mt-3 sm:-mt-6 font-light">:</span>
 
         {/* Minutes */}
         {renderFlapPair(minutes, 'Minutes', '#f1f2f6')}
 
         {settings.showSeconds && (
           <>
-            <span className="font-display text-2xl sm:text-4xl text-white/30 -mt-6 font-light">:</span>
+            <span className="font-display text-lg sm:text-4xl text-white/30 -mt-3 sm:-mt-6 font-light">:</span>
             {/* Seconds */}
             {renderFlapPair(seconds, 'Seconds', '#a78bfa')}
           </>

@@ -5,11 +5,11 @@ import { Header } from './components/Header';
 import { HudTop } from './components/HudTop';
 import { Dock } from './components/Dock';
 import { Footer } from './components/Footer';
+import { MobileCanvasView } from './components/MobileCanvasView';
 import { PresetsModal } from './components/PresetsModal';
 import { SettingsModal } from './components/SettingsModal';
 import { KeyboardShortcutsHelp } from './components/KeyboardShortcutsHelp';
 import { WALLPAPERS } from './data/wallpapers';
-import { SOUNDSCAPES } from './data/soundscapes';
 import { soundEngine } from './audio/soundEngine';
 
 export function App() {
@@ -235,51 +235,15 @@ export function App() {
         customBgUrl={customBgUrl}
       />
 
-      {/* Top Header Navigation */}
-      <Header
+      {/* Mobile Canvas View (Stitch Mobile Reference Layout) */}
+      <MobileCanvasView
+        time={time}
         isIdle={isIdle}
-        isFullscreen={isFullscreen}
-        toggleFullscreen={toggleFullscreen}
-        openPresets={() => setIsPresetsOpen(true)}
-        openSettings={() => setIsSettingsOpen(true)}
-        openShortcuts={() => setIsShortcutsOpen(true)}
-        displayMode={displayMode}
-        setDisplayMode={setDisplayMode}
-      />
-
-      {/* Top HUD Telemetry Pill & Actions */}
-      <HudTop
-        isIdle={isIdle}
-        displayMode={displayMode}
-        activeSound={activeSound}
-        idleTimeoutLabel={idleOptions[idleDelayIndex].label}
-        cycleIdleTimeout={cycleIdleTimeout}
-        toggleFullscreen={toggleFullscreen}
-      />
-
-      {/* Main Screensaver Center Stage */}
-      <main
-        className={`relative w-full h-screen overflow-hidden flex items-center justify-center pt-16 transition-all duration-500 ${
-          dockExpanded && !isIdle ? 'pb-72 md:pb-80' : 'pb-16'
-        }`}
-      >
-        <ClockStage
-          time={time}
-          clockStyle={clockStyle}
-          displayMode={displayMode}
-          settings={settings}
-        />
-      </main>
-
-      {/* Ambient Customizer Glass Dock Drawer */}
-      <Dock
-        isIdle={isIdle}
+        setIsIdle={setIsIdle}
         displayMode={displayMode}
         setDisplayMode={setDisplayMode}
         clockStyle={clockStyle}
-        setClockStyle={setClockStyle}
-        dimPercent={dimPercent}
-        setDimPercent={setDimPercent}
+        settings={settings}
         currentBg={currentBg}
         setCurrentBg={setCurrentBg}
         activeSound={activeSound}
@@ -288,20 +252,83 @@ export function App() {
         toggleMute={toggleMute}
         volume={volume}
         setVolume={setVolume}
-        dockExpanded={dockExpanded}
-        setDockExpanded={setDockExpanded}
+        isFullscreen={isFullscreen}
+        toggleFullscreen={toggleFullscreen}
+        openPresets={() => setIsPresetsOpen(true)}
+        openSettings={() => setIsSettingsOpen(true)}
+        openShortcuts={() => setIsShortcutsOpen(true)}
       />
 
-      {/* Floating Bottom Quick Pill Footer */}
-      <Footer
-        isIdle={isIdle}
-        toggleFullscreen={toggleFullscreen}
-        isFullscreen={isFullscreen}
-        cycleClockStyle={cycleClockStyle}
-        cycleWallpaper={cycleWallpaper}
-        toggleDockExpanded={() => setDockExpanded(!dockExpanded)}
-        dockExpanded={dockExpanded}
-      />
+      {/* Desktop Experience (Screen >= 768px) */}
+      <div className="desktop-only flex-col w-full h-full min-h-screen">
+        {/* Top Header Navigation */}
+        <Header
+          isIdle={isIdle}
+          isFullscreen={isFullscreen}
+          toggleFullscreen={toggleFullscreen}
+          openPresets={() => setIsPresetsOpen(true)}
+          openSettings={() => setIsSettingsOpen(true)}
+          openShortcuts={() => setIsShortcutsOpen(true)}
+          displayMode={displayMode}
+          setDisplayMode={setDisplayMode}
+        />
+
+        {/* Top HUD Telemetry Pill & Actions */}
+        <HudTop
+          isIdle={isIdle}
+          displayMode={displayMode}
+          activeSound={activeSound}
+          idleTimeoutLabel={idleOptions[idleDelayIndex].label}
+          cycleIdleTimeout={cycleIdleTimeout}
+          toggleFullscreen={toggleFullscreen}
+        />
+
+        {/* Main Screensaver Center Stage */}
+        <main
+          className={`relative w-full h-full min-h-[100dvh] overflow-hidden flex items-center justify-center pt-14 sm:pt-16 transition-all duration-500 ${
+            dockExpanded && !isIdle ? 'pb-48 sm:pb-72 md:pb-80' : 'pb-14 sm:pb-16'
+          }`}
+        >
+          <ClockStage
+            time={time}
+            clockStyle={clockStyle}
+            displayMode={displayMode}
+            settings={settings}
+          />
+        </main>
+
+        {/* Ambient Customizer Glass Dock Drawer */}
+        <Dock
+          isIdle={isIdle}
+          displayMode={displayMode}
+          setDisplayMode={setDisplayMode}
+          clockStyle={clockStyle}
+          setClockStyle={setClockStyle}
+          dimPercent={dimPercent}
+          setDimPercent={setDimPercent}
+          currentBg={currentBg}
+          setCurrentBg={setCurrentBg}
+          activeSound={activeSound}
+          toggleSound={toggleSound}
+          isMuted={isMuted}
+          toggleMute={toggleMute}
+          volume={volume}
+          setVolume={setVolume}
+          dockExpanded={dockExpanded}
+          setDockExpanded={setDockExpanded}
+        />
+
+        {/* Floating Bottom Quick Pill Footer */}
+        <Footer
+          isIdle={isIdle}
+          toggleFullscreen={toggleFullscreen}
+          isFullscreen={isFullscreen}
+          cycleClockStyle={cycleClockStyle}
+          cycleWallpaper={cycleWallpaper}
+          toggleDockExpanded={() => setDockExpanded(!dockExpanded)}
+          dockExpanded={dockExpanded}
+        />
+      </div>
 
       {/* Interactive Modals */}
       <PresetsModal
