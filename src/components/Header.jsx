@@ -45,13 +45,6 @@ export function Header({
           </button>
 
           <button
-            onClick={openPresets}
-            className="font-body text-xs sm:text-sm font-medium text-[#8b95a5] hover:text-[#f1f2f6] px-3.5 py-1.5 rounded-full hover:bg-white/[0.04] transition-all"
-          >
-            Presets
-          </button>
-
-          <button
             onClick={() => setDisplayMode('timer')}
             className={`font-body text-xs sm:text-sm font-medium px-3.5 py-1.5 rounded-full transition-all ${
               displayMode === 'timer'
@@ -60,13 +53,6 @@ export function Header({
             }`}
           >
             Focus Timer
-          </button>
-
-          <button
-            onClick={openSettings}
-            className="font-body text-xs sm:text-sm font-medium text-[#8b95a5] hover:text-[#f1f2f6] px-3.5 py-1.5 rounded-full hover:bg-white/[0.04] transition-all"
-          >
-            Settings
           </button>
         </nav>
 

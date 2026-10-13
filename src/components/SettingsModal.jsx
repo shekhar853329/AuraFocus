@@ -6,7 +6,10 @@ export function SettingsModal({
   settings,
   updateSettings,
   customBgUrl,
-  setCustomBgUrl
+  setCustomBgUrl,
+  idleOptions,
+  idleDelayIndex,
+  setIdleDelayIndex
 }) {
   const [urlInput, setUrlInput] = useState(customBgUrl || '');
 
@@ -130,7 +133,42 @@ export function SettingsModal({
             </div>
           </div>
 
-          {/* Section 2: Custom Wallpaper */}
+          {/* Section 2: Screensaver Auto-Idle Inactivity */}
+          {idleOptions && (
+            <div className="flex flex-col gap-3">
+              <h3 className="font-mono text-xs uppercase tracking-wider text-[#38e1ff] font-semibold">
+                Screensaver Immersion Timeout
+              </h3>
+              <div className="flex items-center justify-between p-3 rounded-2xl bg-[#16181f] border border-white/5">
+                <div>
+                  <span className="font-body text-sm text-[#f1f2f6] font-medium block">
+                    Auto-Hide HUD Controls
+                  </span>
+                  <span className="font-body text-xs text-[#8b95a5]">
+                    Fade away interface into total scenic immersion after inactivity
+                  </span>
+                </div>
+                <div className="flex items-center gap-1 bg-[#090b0f] p-1 rounded-xl border border-white/5">
+                  {idleOptions.map((opt, idx) => (
+                    <button
+                      key={opt.label}
+                      type="button"
+                      onClick={() => setIdleDelayIndex(idx)}
+                      className={`px-2.5 py-1 rounded-lg font-mono text-xs transition-all ${
+                        idleDelayIndex === idx
+                          ? 'bg-[#38e1ff] text-[#00232a] font-semibold shadow-sm'
+                          : 'text-[#8b95a5] hover:text-[#f1f2f6]'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Section 3: Custom Wallpaper */}
           <div className="flex flex-col gap-3">
             <h3 className="font-mono text-xs uppercase tracking-wider text-[#38e1ff] font-semibold">
               Custom Wallpaper Source
@@ -170,3 +208,5 @@ export function SettingsModal({
     </div>
   );
 }
+
+export default SettingsModal;

@@ -37,7 +37,7 @@ export function App() {
 
   // Auto-Idle Inactivity State
   const [isIdle, setIsIdle] = useState(false);
-  const [idleDelayIndex, setIdleDelayIndex] = useState(1); // default '30s'
+  const [idleDelayIndex, setIdleDelayIndex] = useState(0); // default '5s'
   const idleOptions = [
     { label: '5s', ms: 5 * 1000 },
     { label: '30s', ms: 30 * 1000 },
@@ -317,6 +317,9 @@ export function App() {
         updateSettings={updateSettings}
         customBgUrl={customBgUrl}
         setCustomBgUrl={setCustomBgUrl}
+        idleOptions={idleOptions}
+        idleDelayIndex={idleDelayIndex}
+        setIdleDelayIndex={setIdleDelayIndex}
       />
 
       <KeyboardShortcutsHelp
