@@ -7,6 +7,7 @@ const SHORTCUTS = [
   { key: 'B', action: 'Cycle Living Canvases & Sceneries' },
   { key: 'M', action: 'Mute / Unmute Audio' },
   { key: 'H', action: 'Immediately Hide / Reveal HUD Controls' },
+  { key: 'I', action: 'About AuraFocus & FAQ Guide' },
   { key: '?', action: 'Open / Close Keyboard Shortcuts' },
   { key: 'Esc', action: 'Exit Fullscreen or Close Dialogs' }
 ];

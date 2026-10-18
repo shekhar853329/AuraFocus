@@ -7,6 +7,7 @@ export function Header({
   openPresets,
   openSettings,
   openShortcuts,
+  openAbout,
   displayMode,
   setDisplayMode
 }) {
@@ -58,6 +59,16 @@ export function Header({
 
         {/* Right Action Icons */}
         <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* About & Guide (SEO/AEO/GEO Help) */}
+          <button
+            onClick={openAbout}
+            aria-label="About AuraFocus and FAQ Guide"
+            title="About & Guide / FAQ"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1b1f2b]/70 hover:bg-[#252b3b] text-[#b0b8c2] hover:text-[#f1f2f6] border border-white/10 flex items-center justify-center transition-all"
+          >
+            <span className="material-symbols-outlined text-[16px] sm:text-[18px]">info</span>
+          </button>
+
           {/* Keyboard Shortcuts helper (Desktop only) */}
           <button
             onClick={openShortcuts}

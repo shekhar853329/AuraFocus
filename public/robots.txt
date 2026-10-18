@@ -1,0 +1,45 @@
+# Robots.txt for AuraFocus (https://aurafocus.app)
+# Designed for maximum visibility across traditional search engines (Google, Bing)
+# and modern Generative & Answer Engines (ChatGPT, Perplexity, Claude, Gemini, Copilot).
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /private/
+
+# Explicitly allow major AI and Generative Answer crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Sitemap Index
+Sitemap: https://aurafocus.app/sitemap.xml

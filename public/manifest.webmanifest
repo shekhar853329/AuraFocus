@@ -1,0 +1,23 @@
+{
+  "name": "AuraFocus — Ambient Screensaver & Focus Timer",
+  "short_name": "AuraFocus",
+  "description": "Ambient fullscreen screensaver, living canvas, and minimalist Pomodoro focus timer with procedural soundscapes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08090c",
+  "theme_color": "#08090c",
+  "orientation": "any",
+  "categories": [
+    "productivity",
+    "utilities",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

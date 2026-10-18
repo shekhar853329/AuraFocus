@@ -9,6 +9,7 @@ import { MobileCanvasView } from './components/MobileCanvasView';
 import { PresetsModal } from './components/PresetsModal';
 import { SettingsModal } from './components/SettingsModal';
 import { KeyboardShortcutsHelp } from './components/KeyboardShortcutsHelp';
+import { AboutModal } from './components/AboutModal';
 import { WALLPAPERS } from './data/wallpapers';
 import { soundEngine } from './audio/soundEngine';
 
@@ -53,6 +54,7 @@ export function App() {
   const [isPresetsOpen, setIsPresetsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   // Settings
   const [settings, setSettings] = useState({
@@ -127,12 +129,12 @@ export function App() {
     if (currentTimeout) {
       idleTimerRef.current = setTimeout(() => {
         // Do not auto-hide if a modal is open
-        if (!isPresetsOpen && !isSettingsOpen && !isShortcutsOpen) {
+        if (!isPresetsOpen && !isSettingsOpen && !isShortcutsOpen && !isAboutOpen) {
           setIsIdle(true);
         }
       }, currentTimeout);
     }
-  }, [idleDelayIndex, isPresetsOpen, isSettingsOpen, isShortcutsOpen]);
+  }, [idleDelayIndex, isPresetsOpen, isSettingsOpen, isShortcutsOpen, isAboutOpen]);
 
   // Cycle Auto-Idle timeout
   const cycleIdleTimeout = () => {
@@ -187,6 +189,9 @@ export function App() {
       } else if (e.key === 'h' || e.key === 'H') {
         e.preventDefault();
         setIsIdle((prev) => !prev);
+      } else if (e.key === 'i' || e.key === 'I') {
+        e.preventDefault();
+        setIsAboutOpen((prev) => !prev);
       } else if (e.key === '?') {
         e.preventDefault();
         setIsShortcutsOpen((prev) => !prev);
@@ -194,6 +199,7 @@ export function App() {
         setIsPresetsOpen(false);
         setIsSettingsOpen(false);
         setIsShortcutsOpen(false);
+        setIsAboutOpen(false);
       }
     };
 
@@ -257,6 +263,7 @@ export function App() {
         openPresets={() => setIsPresetsOpen(true)}
         openSettings={() => setIsSettingsOpen(true)}
         openShortcuts={() => setIsShortcutsOpen(true)}
+        openAbout={() => setIsAboutOpen(true)}
       />
 
       {/* Desktop Experience (Screen >= 768px) */}
@@ -269,6 +276,7 @@ export function App() {
           openPresets={() => setIsPresetsOpen(true)}
           openSettings={() => setIsSettingsOpen(true)}
           openShortcuts={() => setIsShortcutsOpen(true)}
+          openAbout={() => setIsAboutOpen(true)}
           displayMode={displayMode}
           setDisplayMode={setDisplayMode}
         />
@@ -352,6 +360,11 @@ export function App() {
       <KeyboardShortcutsHelp
         isOpen={isShortcutsOpen}
         onClose={() => setIsShortcutsOpen(false)}
+      />
+
+      <AboutModal
+        isOpen={isAboutOpen}
+        onClose={() => setIsAboutOpen(false)}
       />
     </div>
   );

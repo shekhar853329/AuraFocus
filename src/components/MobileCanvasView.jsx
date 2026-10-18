@@ -23,7 +23,8 @@ export function MobileCanvasView({
   toggleFullscreen,
   openPresets,
   openSettings,
-  _openShortcuts
+  _openShortcuts,
+  openAbout
 }) {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [mobileTab, setMobileTab] = useState('canvas'); // 'canvas', 'presets', 'audio', 'config'
@@ -87,6 +88,17 @@ export function MobileCanvasView({
 
         {/* Right Header Actions */}
         <div className="mobile-header-actions">
+          {openAbout && (
+            <button
+              onClick={openAbout}
+              aria-label="About & Guide"
+              title="About & Guide / FAQ"
+              className="mobile-header-icon-btn"
+            >
+              <span className="material-symbols-outlined text-[19px]">info</span>
+            </button>
+          )}
+
           <button
             onClick={openPresets}
             aria-label="Quick Presets"

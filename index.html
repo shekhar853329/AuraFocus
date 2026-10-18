@@ -1,23 +1,208 @@
 <!doctype html>
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#08090c" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content="AuraFocus — Ambient Fullscreen Screensaver, Living Canvas & Minimalist Clock Hub. Featuring dynamic sceneries, procedural soundscapes, and flip, analog, and digital timepieces." />
-    <title>AuraFocus — Ambient Screensaver & Clock Canvas</title>
-    
-    <!-- Google Fonts: Space Grotesk & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- Material Symbols Outlined -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-  </head>
-  <body class="bg-surface">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PCF4Q7TH');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08090c" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <!-- SEO Canonical URL & Robots Directives -->
+  <link rel="canonical" href="https://aurafocus.app/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="AuraFocus" />
+  <meta name="keywords"
+    content="ambient screensaver, focus timer, pomodoro timer, living canvas, aesthetic clock, flip clock online, procedural soundscapes, white noise generator, study clock, deep work, minimalist desk clock, lofi ambience" />
+
+  <!-- Primary Title & Meta Description -->
+  <title>AuraFocus — Ambient Screensaver, Living Canvas &amp; Aesthetic Focus Timer</title>
+  <meta name="description"
+    content="AuraFocus is an aesthetic fullscreen screensaver, living digital canvas, and Pomodoro timer. Features customizable analog/flip/digital timepieces and procedural soundscapes for deep focus." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aurafocus.app/" />
+  <meta property="og:site_name" content="AuraFocus" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="AuraFocus — Ambient Screensaver, Living Canvas &amp; Aesthetic Focus Timer" />
+  <meta property="og:description"
+    content="Transform your workspace into an aesthetic focus sanctuary with living canvases, procedural soundscapes, and customizable flip, analog, and Pomodoro timepieces." />
+  <meta property="og:image" content="https://aurafocus.app/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AuraFocus Ambient Screensaver and Focus Timer interface preview" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://aurafocus.app/" />
+  <meta name="twitter:title" content="AuraFocus — Ambient Screensaver, Living Canvas &amp; Aesthetic Focus Timer" />
+  <meta name="twitter:description"
+    content="Aesthetic fullscreen screensaver, living canvas, and Pomodoro timer with procedural soundscapes." />
+  <meta name="twitter:image" content="https://aurafocus.app/og-image.svg" />
+  <meta name="twitter:image:alt" content="AuraFocus Ambient Screensaver and Focus Timer preview banner" />
+
+  <!-- AI & Generative Engine Discovery (llms.txt standard) -->
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context (llms.txt)" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Documentation (llms-full.txt)" />
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Material Symbols Outlined -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data: WebApplication, WebSite, Organization & FAQPage for SEO/AEO/GEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://aurafocus.app/#app",
+          "name": "AuraFocus",
+          "url": "https://aurafocus.app",
+          "description": "An aesthetic fullscreen screensaver, living digital canvas, and Pomodoro timer featuring procedural Web Audio soundscapes and customizable timepieces.",
+          "applicationCategory": "ProductivityApplication",
+          "operatingSystem": "All (Web Browser)",
+          "browserRequirements": "Requires JavaScript and Web Audio API support",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "screenshot": "https://aurafocus.app/og-image.svg",
+          "featureList": [
+            "Living atmospheric wallpaper sceneries with customizable dimming controls",
+            "Procedural Web Audio soundscapes: Rain on glass, Forest night, Deep space, Cozy hearth, and Tidal ocean surges",
+            "Multi-style timepieces: Minimalist Digital, Retro Split-Flip Clock, Quartz Analog Dial, and Typographic Words Clock",
+            "Pomodoro Focus Timer with segmented 25m/50m/5m/15m intervals and harmonic audio cues",
+            "Zen Fullscreen Immersion with auto-idle inactivity fade and fast keyboard shortcuts",
+            "100% Client-side privacy with zero tracking, no ads, and full offline PWA support"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://aurafocus.app/#website",
+          "name": "AuraFocus",
+          "url": "https://aurafocus.app",
+          "description": "Ambient fullscreen screensaver, living canvas, and aesthetic focus clock hub."
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://aurafocus.app/#organization",
+          "name": "AuraFocus",
+          "url": "https://aurafocus.app",
+          "logo": "https://aurafocus.app/favicon.svg"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://aurafocus.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is AuraFocus?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AuraFocus is an aesthetic fullscreen screensaver, living digital canvas, and Pomodoro focus timer. It combines procedural ambient soundscapes (rain, fire, ocean, deep space) with customizable retro flip, digital, analog, and words clocks to eliminate distractions and promote deep work."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does ambient sound in AuraFocus improve concentration?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AuraFocus uses procedural acoustic noise masking. Ambient sounds like rain, pink noise, and fire crackles smooth out sudden environmental conversational noises, preventing disruption to working memory and lowering cognitive fatigue."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What clock styles are available in AuraFocus?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AuraFocus provides four distinct clock styles: a clean modernist Digital Clock, a mechanical 3D Retro Flip Clock, a minimalist Quartz Analog Dial, and an English Typographic Words Clock, along with an interactive Pomodoro Focus Timer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can AuraFocus be used as a dedicated full-screen desk clock or screensaver?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Press the F key on your keyboard or tap the fullscreen icon to launch Zen Fullscreen mode. AuraFocus features intelligent auto-idle detection that automatically fades UI controls after inactivity, leaving only the tranquil living canvas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is AuraFocus free, and does it require an account?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AuraFocus is 100% free and open-source. It does not require any account creation, login, or installation, and all procedural audio and settings operate privately in your browser."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-surface">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCF4Q7TH" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Search Engine & Accessibility Semantic Fallback for Non-JS Crawlers & Answer Engines -->
+  <noscript>
+    <header style="padding: 20px; text-align: center; background: #08090c; color: #f1f2f6; font-family: sans-serif;">
+      <h1>AuraFocus — Ambient Screensaver, Living Canvas &amp; Aesthetic Focus Timer</h1>
+      <p>AuraFocus is a minimalist, privacy-first living screensaver and desk timepiece designed to eliminate
+        distractions and facilitate flow-state deep work.</p>
+    </header>
+    <main
+      style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif; color: #b0b8c2; line-height: 1.6;">
+      <h2>Key Features &amp; Timepieces</h2>
+      <ul>
+        <li><strong>Retro Flip Clock &amp; Modern Digital Clock:</strong> Aesthetic timepieces with seconds, dates, and
+          customizable 12/24-hour formats.</li>
+        <li><strong>Procedural Ambient Soundscapes:</strong> Dynamic Web Audio synthesis of rain on glass, campfire
+          hearth, deep forest, and ocean tides without audio buffering.</li>
+        <li><strong>Integrated Pomodoro Timer:</strong> 25-minute focus intervals and 5-minute restorative breaks with
+          gentle harmonic chimes.</li>
+        <li><strong>Living Wallpapers:</strong> Curated high-resolution sceneries with adjustable brightness dimming and
+          custom background URL support.</li>
+        <li><strong>Zen Fullscreen Mode:</strong> Instant keyboard-driven fullscreen (press F) with automatic inactivity
+          UI fading.</li>
+      </ul>
+      <h2>Frequently Asked Questions</h2>
+      <h3>How does AuraFocus improve productivity?</h3>
+      <p>By pairing continuous psychoacoustic sound masking with structured Pomodoro intervals, AuraFocus neutralizes
+        auditory distractions and combats attention fatigue during study, coding, and writing sessions.</p>
+      <h3>Does AuraFocus require installation?</h3>
+      <p>No. AuraFocus runs directly in any modern browser as a Progressive Web App (PWA) and works completely offline
+        once cached.</p>
+    </main>
+  </noscript>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

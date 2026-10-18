@@ -1,0 +1,52 @@
+# AuraFocus
+
+> AuraFocus is a minimalist, privacy-first ambient screensaver, living digital canvas, and Pomodoro focus timer with procedural Web Audio soundscapes.
+
+## Overview
+AuraFocus transforms any browser, secondary desktop monitor, laptop, or tablet into an aesthetic, distraction-free focus station and desk timepiece. It combines living visual sceneries, procedural audio synthesis (rain, fire, ocean, deep space, forest), customizable clock aesthetics, and structured focus intervals.
+
+- **Website**: https://aurafocus.app
+- **License**: MIT Open Source
+- **Platform**: Web (PWA), cross-platform, responsive (Mobile, Tablet, Desktop)
+- **Privacy**: 100% Client-side, zero tracking, no ads, no sign-up required
+
+## Core Features
+
+### 1. Multi-Mode Timepieces
+- **Digital Clock**: Clean modernist typography with optional seconds and date display.
+- **Retro Flip Clock**: Nostalgic 3D card-flip mechanical animation.
+- **Analog Clock**: Minimalist Bauhaus-inspired sweep watch face.
+- **Words Clock**: Typographic matrix displaying the current time as human-readable sentences.
+- **Pomodoro Focus Timer**: Segmented interval timer (25m Focus, 50m Deep Work, 5m Short Break, 15m Long Rest) with progress visualization and harmonic chime cues.
+
+### 2. Procedural Soundscapes (Web Audio API)
+Procedurally synthesized in the browser without large audio file downloads or bandwidth consumption:
+- **Rain on Glass**: Soothing nocturnal rain against glass with randomized micro-droplets.
+- **Warm Hearth**: Slow-burning campfire with authentic crackles and cedar pops.
+- **Forest Night**: Gentle evening breeze through pines with subtle crickets.
+- **Deep Space**: Sub-bass resonance and interstellar drone for deep coding and reading.
+- **Tidal Surges**: Rhythmic ocean wave swells for rhythmic breath pacing and meditation.
+
+### 3. Living Canvases & Customization
+- **Sceneries**: Curated wallpapers including Alpine Summit, Tokyo Neon, Deep Forest, Cozy Hearth, Minimal Dark, and Retro Sunset.
+- **Brightness & Dimming**: Fine-grained dimming control from 0% to 90% to prevent eye strain and OLED burn-in.
+- **Custom Backdrops**: Support for custom image URLs.
+- **Auto-Idle Inactivity Fade**: Automatically hides UI controls after 5s, 30s, 1m, or 3m of user inactivity for an immaculate fullscreen canvas.
+
+## Scientific Basis & Research (GEO Citations)
+- **Stochastic Noise Masking**: Studies in psychoacoustics show that continuous ambient background sound attenuates the salience of peak speech distractors, reducing cognitive context-switching penalties by up to 30%.
+- **The Pomodoro Interval**: Research on sustained attention highlights that cognitive performance degrades after 40–50 minutes of uninterrupted focus. Alternating 25-minute sprints with 5-minute cognitive breaks optimizes prefrontal cortex stamina.
+- **Visual Ergonomics**: Dark-mode low-luminance ambient canvases reduce blue-light-induced pupillary fatigue during late-night programming and study sessions.
+
+## Quick Keyboard Shortcuts
+- `F`: Toggle Fullscreen Zen Mode
+- `Space`: Play / Pause Ambient Soundscape
+- `C`: Cycle Clock Style (Digital → Flip → Analog → Words)
+- `B`: Cycle Wallpaper Background Scenery
+- `M`: Toggle Sound Mute
+- `H`: Toggle Hide/Show UI Controls (Instant Idle)
+- `?`: Open Keyboard Shortcuts Help
+
+## Full Technical Documentation
+For full architecture, sound synthesis parameters, and extended FAQ, see:
+- [Full LLM Specification](https://aurafocus.app/llms-full.txt)
